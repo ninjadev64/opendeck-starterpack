@@ -1,0 +1,57 @@
+{
+  "SDKVersion": 2,
+  "Name": "OpenDeck Starter Pack",
+  "Description": "OpenDeck starter pack plugin",
+  "Author": "ninjadev64",
+  "Version": "1.0.0",
+  "CodePathWin": "opendeck-starterpack.exe",
+  "CodePathMac": "opendeck-starterpack-mac",
+  "CodePathLin": "opendeck-starterpack",
+  "Icon": "icons/plugin",
+  "Category": "OpenDeck",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+      "Platform": "linux"
+    }
+  ],
+  "Actions": [
+    {
+      "Icon": "icons/runCommand",
+      "Name": "Run command",
+      "States": [{ "Image": "actionDefaultImage" }],
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Run a command",
+      "UUID": "com.amansprojects.starterpack.runcommand",
+      "PropertyInspectorPath": "propertyInspector/runCommand.html"
+    },
+    {
+      "Icon": "icons/pressKeys",
+      "Name": "Press keys",
+      "States": [{ "Image": "actionDefaultImage" }],
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Press a sequence of keys",
+      "UUID": "com.amansprojects.starterpack.presskeys",
+      "PropertyInspectorPath": "propertyInspector/pressKeys.html"
+    },
+    {
+      "Icon": "icons/switchProfile",
+      "Name": "Switch profile",
+      "States": [{ "Image": "actionDefaultImage" }],
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Switch the selected profile",
+      "UUID": "com.amansprojects.starterpack.switchprofile",
+      "PropertyInspectorPath": "propertyInspector/switchProfile.html"
+    }
+  ]
+}
