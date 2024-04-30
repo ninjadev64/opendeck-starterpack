@@ -10,6 +10,9 @@ function connectElgatoStreamDeckSocket(inPort, inPropertyInspectorUUID, inRegist
 		}));
 	};
 
+	let device = document.getElementById("device");
+	device.value = inActionInfo.payload.settings.device ?? inActionInfo.device;
+
 	let profile = document.getElementById("profile");
 	profile.value = inActionInfo.payload.settings.profile ?? "";
 
@@ -18,7 +21,7 @@ function connectElgatoStreamDeckSocket(inPort, inPropertyInspectorUUID, inRegist
 			event: "setSettings",
 			context: inActionInfo.context,
 			payload: {
-				device: inActionInfo.device,
+				device: device.value ?? inActionInfo.device,
 				profile: profile.value
 			}
 		}));
