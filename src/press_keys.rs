@@ -1,11 +1,21 @@
 use openaction::*;
 
-use enigo::{Enigo, DSL, Settings};
+use enigo::{
+	agent::{Agent, Token},
+	Enigo, Settings,
+};
 
 pub fn key_down(event: KeyEvent) -> EventHandlerResult {
 	if let Some(value) = event.payload.settings.as_object().unwrap().get("down") {
+		let value = value.as_str().unwrap();
+		if value.trim().is_empty() {
+			return Ok(());
+		}
 		let mut enigo = Enigo::new(&Settings::default())?;
-		enigo.key_sequence_parse(value.as_str().unwrap());
+		let tokens: Vec<Token> = ron::from_str(value)?;
+		for token in tokens {
+			enigo.execute(&token).unwrap();
+		}
 	}
 
 	Ok(())
@@ -13,8 +23,15 @@ pub fn key_down(event: KeyEvent) -> EventHandlerResult {
 
 pub fn key_up(event: KeyEvent) -> EventHandlerResult {
 	if let Some(value) = event.payload.settings.as_object().unwrap().get("up") {
+		let value = value.as_str().unwrap();
+		if value.trim().is_empty() {
+			return Ok(());
+		}
 		let mut enigo = Enigo::new(&Settings::default())?;
-		enigo.key_sequence_parse(value.as_str().unwrap());
+		let tokens: Vec<Token> = ron::from_str(value)?;
+		for token in tokens {
+			enigo.execute(&token).unwrap();
+		}
 	}
 
 	Ok(())
