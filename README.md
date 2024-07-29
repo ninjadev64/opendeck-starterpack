@@ -4,6 +4,7 @@ This repository contains an OpenAction plugin that provides basic actions for us
 
 Currently available actions:
 - Run command
+- Run command toggle
 - Input simulation
 - Switch profile
 

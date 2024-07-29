@@ -1,5 +1,6 @@
 mod press_keys;
 mod run_command;
+mod run_command_toggle;
 mod switch_profile;
 
 use openaction::*;
@@ -18,6 +19,7 @@ impl openaction::ActionEventHandler for ActionEventHandler {
 	) -> EventHandlerResult {
 		match &event.action[..] {
 			"com.amansprojects.starterpack.runcommand" => run_command::key_down(event),
+			"com.amansprojects.starterpack.runcommandtoggle" => run_command_toggle::key_down(event),
 			"com.amansprojects.starterpack.inputsimulation" => press_keys::key_down(event),
 			_ => Ok(()),
 		}
@@ -30,6 +32,7 @@ impl openaction::ActionEventHandler for ActionEventHandler {
 	) -> EventHandlerResult {
 		match &event.action[..] {
 			"com.amansprojects.starterpack.runcommand" => run_command::key_up(event),
+			"com.amansprojects.starterpack.runcommandtoggle" => run_command_toggle::key_up(event),
 			"com.amansprojects.starterpack.inputsimulation" => press_keys::key_up(event),
 			"com.amansprojects.starterpack.switchprofile" => switch_profile::key_up(event),
 			_ => Ok(()),
