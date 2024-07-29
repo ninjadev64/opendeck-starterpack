@@ -33,6 +33,16 @@
 			"PropertyInspectorPath": "propertyInspector/runCommand.html"
 		},
 		{
+			"Icon": "icons/runCommand",
+			"Name": "Run command toggle",
+			"States": [ { "Image": "actionDefaultImage", "Title": "State 1", "ShowTitle": true }, { "Image": "actionDefaultImage", "Title": "State 2", "ShowTitle": true } ],
+			"Controllers": [ "Keypad" ],
+			"SupportedInMultiActions": true,
+			"Tooltip": "Run a command with 2 toggable states",
+			"UUID": "com.amansprojects.starterpack.runcommandtoggle",
+			"PropertyInspectorPath": "propertyInspector/runCommandToggle.html"
+		},
+		{
 			"Icon": "icons/inputSimulation",
 			"Name": "Input simulation",
 			"States": [ { "Image": "actionDefaultImage" } ],
