@@ -10,24 +10,24 @@ function connectElgatoStreamDeckSocket(inPort, inPropertyInspectorUUID, inRegist
 		}));
 	};
 
-	let down = document.getElementById("S1Down");
-	down.value = inActionInfo.payload.settings.down ?? "";
-	let up = document.getElementById("S1Up");
-	up.value = inActionInfo.payload.settings.up ?? "";
-	let down2 = document.getElementById("S2Down");
-	down2.value = inActionInfo.payload.settings.down2 ?? "";
-	let up2 = document.getElementById("S2Up");
-	up2.value = inActionInfo.payload.settings.up2 ?? "";
+	let s1_down = document.getElementById("s1down");
+	s1_down.value = inActionInfo.payload.settings.down ?? "";
+	let s1_up = document.getElementById("s1up");
+	s1_up.value = inActionInfo.payload.settings.up ?? "";
+	let s2_down = document.getElementById("s2down");
+	s2_down.value = inActionInfo.payload.settings.down2 ?? "";
+	let s2_up = document.getElementById("s2up");
+	s2_up.value = inActionInfo.payload.settings.up2 ?? "";
 
 	document.getElementById("update").addEventListener("click", () => {
 		websocket.send(JSON.stringify({
 			event: "setSettings",
 			context: inActionInfo.context,
 			payload: {
-				down: down.value,
-				up: up.value,
-				down2: down2.value,
-				up2: up2.value
+				s1_down: s1_down.value,
+				s1_up: s1_up.value,
+				s2_down: s2_down.value,
+				s2_up: s2_up.value
 			}
 		}));
 	});

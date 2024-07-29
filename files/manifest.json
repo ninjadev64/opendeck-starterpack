@@ -38,7 +38,7 @@
 			"States": [ { "Image": "actionDefaultImage", "Title": "State 1", "ShowTitle": true }, { "Image": "actionDefaultImage", "Title": "State 2", "ShowTitle": true } ],
 			"Controllers": [ "Keypad" ],
 			"SupportedInMultiActions": true,
-			"Tooltip": "Run a command with 2 toggable states",
+			"Tooltip": "Run a command with 2 toggleable states",
 			"UUID": "com.amansprojects.starterpack.runcommandtoggle",
 			"PropertyInspectorPath": "propertyInspector/runCommandToggle.html"
 		},
