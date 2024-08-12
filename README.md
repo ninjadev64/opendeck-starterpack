@@ -8,4 +8,4 @@ Currently available actions:
 - Input simulation
 - Switch profile
 
-Icons from Phosphor Icons. Licensed under the BSD 3-Clause license.
+Icons from Phosphor Icons. Licensed under the MIT license.
