@@ -2,7 +2,7 @@
 	"Name": "OpenDeck Starter Pack",
 	"Description": "OpenDeck starter pack plugin",
 	"Author": "ninjadev64",
-	"Version": "1.2.0",
+	"Version": "1.3.0",
 	"CodePathWin": "opendeck-starterpack.exe",
 	"CodePathMac": "opendeck-starterpack-mac",
 	"CodePathLin": "opendeck-starterpack",
@@ -24,7 +24,7 @@
 	"Actions": [
 		{
 			"Icon": "icons/runCommand",
-			"Name": "Run command",
+			"Name": "Run Command",
 			"States": [ { "Image": "actionDefaultImage" } ],
 			"Controllers": [ "Keypad" ],
 			"SupportedInMultiActions": true,
@@ -33,18 +33,8 @@
 			"PropertyInspectorPath": "propertyInspector/runCommand.html"
 		},
 		{
-			"Icon": "icons/runCommand",
-			"Name": "Run command toggle",
-			"States": [ { "Image": "actionDefaultImage", "Title": "State 1", "ShowTitle": true }, { "Image": "actionDefaultImage", "Title": "State 2", "ShowTitle": true } ],
-			"Controllers": [ "Keypad" ],
-			"SupportedInMultiActions": true,
-			"Tooltip": "Run a command with 2 toggleable states",
-			"UUID": "com.amansprojects.starterpack.runcommandtoggle",
-			"PropertyInspectorPath": "propertyInspector/runCommandToggle.html"
-		},
-		{
 			"Icon": "icons/inputSimulation",
-			"Name": "Input simulation",
+			"Name": "Input Simulation",
 			"States": [ { "Image": "actionDefaultImage" } ],
 			"Controllers": [ "Keypad" ],
 			"SupportedInMultiActions": true,
@@ -54,7 +44,7 @@
 		},
 		{
 			"Icon": "icons/switchProfile",
-			"Name": "Switch profile",
+			"Name": "Switch Profile",
 			"States": [ { "Image": "actionDefaultImage" } ],
 			"Controllers": [ "Keypad" ],
 			"SupportedInMultiActions": true,

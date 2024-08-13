@@ -1,7 +1,7 @@
 [package]
 name = "opendeck-starterpack"
 authors = [ "ninjadev64" ]
-version = "0.1.0"
+version = "1.3.0"
 edition = "2021"
 license = "MIT"
 
