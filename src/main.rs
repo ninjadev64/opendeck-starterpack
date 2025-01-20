@@ -4,8 +4,6 @@ mod switch_profile;
 
 use openaction::*;
 
-use simplelog::{CombinedLogger, Config, LevelFilter, WriteLogger};
-
 struct GlobalEventHandler {}
 impl openaction::GlobalEventHandler for GlobalEventHandler {}
 
@@ -39,11 +37,12 @@ impl openaction::ActionEventHandler for ActionEventHandler {
 
 #[tokio::main]
 async fn main() {
-	CombinedLogger::init(vec![WriteLogger::new(
-		LevelFilter::Debug,
-		Config::default(),
-		std::fs::File::create("plugin.log").unwrap(),
-	)])
+	simplelog::TermLogger::init(
+		simplelog::LevelFilter::Debug,
+		simplelog::Config::default(),
+		simplelog::TerminalMode::Stdout,
+		simplelog::ColorChoice::Never,
+	)
 	.unwrap();
 
 	if let Err(error) = init_plugin(GlobalEventHandler {}, ActionEventHandler {}).await {
