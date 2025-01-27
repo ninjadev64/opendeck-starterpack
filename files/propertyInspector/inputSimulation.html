@@ -34,17 +34,42 @@
 		<link rel="stylesheet" href="sdpi.css" />
 	</head>
 	<body>
-		<div class="sdpi-item">
+		<div type="textarea" class="sdpi-item">
 			<div class="sdpi-item-label">Key down</div>
 			<span class="sdpi-item-value textarea">
-				<textarea oninput="update();" id="down" placeholder="[t(&quot;hello world!&quot;),m(10,10,r),s(5),b(l),k(ctrl,p),k(uni('a')),k(ctrl,r)]"></textarea>
+				<textarea oninput="update();" id="down" style="font-family: monospace;" placeholder="Input to be executed on key down"></textarea>
 			</span>
 		</div>
-		<div class="sdpi-item">
+		<div type="textarea" class="sdpi-item">
 			<div class="sdpi-item-label">Key up</div>
 			<span class="sdpi-item-value textarea">
-				<textarea oninput="update();" id="up" placeholder="[t(&quot;hello world!&quot;),m(10,10,r),s(5),b(l),k(ctrl,p),k(uni('a')),k(ctrl,r)]"></textarea>
+				<textarea oninput="update();" id="up" style="font-family: monospace;" placeholder="Input to be executed on key up"></textarea>
 			</span>
 		</div>
+		<details open>
+			<summary style="margin-bottom: 0.25rem; font-size: 1.25rem;">Details</summary>
+			<code style="word-break: break-all;">[t("hello world!"),m(10,10,r),s(5),b(l),k(ctrl,p),k(uni('a')),k(ctrl,r)]</code>
+			<p>The example above becomes something like this:</p>
+<code style="white-space: pre;">[
+	Text("hello world!"),
+	MoveMouse(10, 10, Relative),
+	Scroll(5, Vertical),
+	Button(Left, Click),
+	Key(Control, Press),
+	Key(Unicode('a'), Click),
+	Key(Control, Release),
+]</code>
+			<p>
+				As you can see, <code>Vertical</code> is the default for the <code>Scroll</code> action if an axis is not specified,
+				<code>Click</code> (press followed by release) is the default for the <code>Button</code> and <code>Key</code> actions if a direction is not specified, and so on.
+			</p>
+			<p>
+				You can find a list of all of the keycodes
+				<span style="color: dodgerblue; cursor: pointer;" onclick="window.open('https://github.com/enigo-rs/enigo/blob/v0.3.0/src/keycodes.rs', '_blank');">here</span>.
+				Please note that not all keycodes are available on all operating systems, as is marked on each such keycode on the line above it.
+				You can find the possible buttons, directions, axis and coordinate types
+				<span style="color: dodgerblue; cursor: pointer;" onclick="window.open('https://github.com/enigo-rs/enigo/blob/v0.3.0/src/lib.rs', '_blank');">here</span>.
+			</p>
+		</details>
 	</body>
 </html>
